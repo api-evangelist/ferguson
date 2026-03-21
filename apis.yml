@@ -1,0 +1,7 @@
+aid: ferguson
+url: https://raw.githubusercontent.com/api-evangelist/ferguson/refs/heads/main/apis.yml
+modified: '2026-03-21'
+apis: []
+common:
+  - type: Website
+    url: https://www.ferguson.com
