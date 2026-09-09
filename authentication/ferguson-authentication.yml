@@ -1,0 +1,80 @@
+generated: '2026-09-09'
+method: searched
+source: >-
+  https://developer.ferguson.com/get-started,
+  https://developer.ferguson.com/blog/oauth-2-client-credentials-overview,
+  https://developer.ferguson.com/blog/oauth-2-ropc-overview,
+  https://developer.ferguson.com/blog/oauth-2-authorization-code-grant,
+  https://developer.ferguson.com/faq
+evidence_note: >-
+  developer.ferguson.com is a Backstage single-page application: the served HTML is a
+  6,575-byte shell and its backend (/api/catalog/*, /api/search/*) answers 401 "Missing
+  credentials" to anonymous requests, so these pages cannot be fetched as text by a
+  crawler. The statements below were read from the indexed public text of those exact
+  Ferguson URLs via web search on 2026-09-09. No credentialed access was used and no
+  values were inferred from any other provider.
+description: >-
+  Ferguson's Enterprise APIs are OAuth 2.0 protected. A partner registers on the Ferguson
+  Developer Portal, is approved, creates a Developer/Team App, and receives a Key and
+  Secret. The Key and Secret are base64-encoded into an HTTP Basic Authorization header on
+  a call to the OAuth 2.0 token endpoint with grant_type=client_credentials; the returned
+  access token is then presented on API calls as an Authorization header with the Bearer
+  token type per RFC 6750. Ferguson's own portal documentation also covers the
+  Authorization Code and Resource Owner Password Credentials (ROPC) grants. The token and
+  API host names are published only inside the gated portal, so no endpoint URLs are
+  recorded here.
+schemes:
+  - id: oauth2-client-credentials
+    type: oauth2
+    flow: clientCredentials
+    documented: true
+    token_request_auth: http-basic (base64 of key:secret)
+    token_request_params: grant_type=client_credentials
+    token_endpoint: null
+    note: >-
+      Token endpoint URL is not published outside the approval-gated developer portal.
+    source: https://developer.ferguson.com/blog/oauth-2-client-credentials-overview
+  - id: oauth2-authorization-code
+    type: oauth2
+    flow: authorizationCode
+    documented: true
+    authorization_endpoint: null
+    token_endpoint: null
+    source: https://developer.ferguson.com/blog/oauth-2-authorization-code-grant
+  - id: oauth2-ropc
+    type: oauth2
+    flow: password
+    documented: true
+    note: >-
+      Resource Owner Password Credentials grant, documented by Ferguson's portal. ROPC is
+      deprecated in OAuth 2.1 and discouraged by RFC 9700 / the OAuth 2.0 Security BCP.
+    source: https://developer.ferguson.com/blog/oauth-2-ropc-overview
+  - id: bearer-token
+    type: http
+    scheme: bearer
+    documented: true
+    rfc: RFC 6750
+    note: >-
+      "REST API calls require an Authorization header using an access token with Bearer
+      token type, as defined by the OAuth2 RFC6750 Bearer Token Usage document."
+    source: https://developer.ferguson.com/get-started
+onboarding:
+  self_service: false
+  gate: >-
+    Access is granted only to organizations that complete Ferguson's partner review and
+    approval process; requests go to api.team@ferguson.com and approved requests are
+    backlogged and prioritized to business need.
+  contact: api.team@ferguson.com
+  docs: https://developer.ferguson.com/get-started
+  faq: https://developer.ferguson.com/faq
+gateway:
+  vendor: Google Apigee
+  evidence: >-
+    nonprod.developer.ferguson.com is an Apigee integrated developer portal — its Angular
+    bundle calls /portals/api/sites/:siteId/liveportal/* and /consumers/api/apps, the
+    Apigee portal API surface. The production portal has since moved to Backstage
+    (developer.ferguson.com serves a Backstage app shell with a backstage.io/config block
+    naming GitHub and Microsoft as its auth providers).
+scopes_published: false
+mtls: false
+api_keys_public: false

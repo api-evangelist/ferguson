@@ -1,0 +1,162 @@
+generated: '2026-09-09'
+method: probed
+source: >-
+  Live probes (2026-09-09) of the /.well-known/ discovery surface plus /llms.txt on every
+  host this record knows: the registrable domain and www (www.ferguson.com storefront),
+  the public developer portal (developer.ferguson.com, a Backstage instance), the Apigee
+  non-production developer portal (nonprod.developer.ferguson.com) and api.ferguson.com.
+  Ferguson publishes no API baseURL publicly, so no additional API host could be probed.
+description: >-
+  Nothing was found. www.ferguson.com / ferguson.com and api.ferguson.com return a real
+  404 on every path. Both developer portals are single-page applications whose catch-all
+  answers HTTP 200 with the same HTML app shell for every path (an identical shell is
+  returned for /openapi.json), so those 200s are recorded as present-but-not-a-document
+  and nothing was saved. No WellKnown or SecurityTxt pointer is wired from this file
+  because no path returned a real document.
+hosts:
+  - host: www.ferguson.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: ferguson.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: developer.ferguson.com
+    note: >-
+      Backstage single-page app. Every path returns HTTP 200 with the same 6,575-byte
+      HTML shell, including /openapi.json — a 200 here is not a document.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        type: text/html
+        note: SPA shell, not a real security.txt; not saved.
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: text/html
+        note: SPA shell, not an OIDC discovery document; not saved.
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: text/html
+        note: SPA shell, not authorization-server metadata; not saved.
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        type: text/html
+        note: SPA shell, not protected-resource metadata; not saved.
+      - path: /.well-known/api-catalog
+        status: 200
+        type: text/html
+        note: SPA shell, not an api-catalog document; not saved.
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        type: text/html
+        note: SPA shell, not an ai-plugin manifest; not saved.
+      - path: /.well-known/agent-card.json
+        status: 200
+        type: text/html
+        note: SPA shell, not an A2A agent card; not saved.
+      - path: /.well-known/agent.json
+        status: 200
+        type: text/html
+        note: SPA shell, not an A2A agent card; not saved.
+      - path: /llms.txt
+        status: 200
+        type: text/html
+        note: SPA shell, not an llms.txt; not saved.
+  - host: nonprod.developer.ferguson.com
+    note: >-
+      Apigee integrated developer portal (Angular SPA). Every path returns HTTP 200 with
+      the same 2,138-byte app shell.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        type: text/html
+        note: SPA shell, not a real security.txt; not saved.
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/api-catalog
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/agent-card.json
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /.well-known/agent.json
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+      - path: /llms.txt
+        status: 200
+        type: text/html
+        note: SPA shell; not saved.
+  - host: api.ferguson.com
+    note: >-
+      Answers 403 at the root and serves JBoss Web 7.2.2 error pages; it is a legacy
+      application host, not the documented API gateway. Ferguson does not publish an API
+      base URL outside the gated developer portal.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404

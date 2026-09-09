@@ -1,0 +1,68 @@
+generated: '2026-09-09'
+method: searched
+source: >-
+  Ferguson Developer Portal pages (developer.ferguson.com/get-started, /faq,
+  /blog/oauth-2-client-credentials-overview, /blog/oauth-2-ropc-overview,
+  /blog/oauth-2-authorization-code-grant,
+  /blog/richardson-maturity-model-two-out-three-aint-bad) read via search-indexed public
+  text, plus live 2026-09-09 probes of the /.well-known/ surface on ferguson.com,
+  www.ferguson.com, developer.ferguson.com, nonprod.developer.ferguson.com and
+  api.ferguson.com.
+description: >-
+  Ferguson publishes no machine-readable contract publicly, so nothing here is derived
+  from a spec. Every entry is asserted from Ferguson's own documentation or from a probe
+  we ran; anything we could not establish is recorded as conforms: false with the probe
+  that missed. No domain standard (X12/EDI, cXML PunchOut, GS1) is declared by any
+  Ferguson-published contract we could reach, so none is claimed here.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Ferguson documents OAuth 2.0 Client Credentials, Authorization Code and Resource
+      Owner Password Credentials grants for its Enterprise APIs
+      (developer.ferguson.com/blog/oauth-2-client-credentials-overview).
+  - id: rfc6750
+    conforms: true
+    evidence: >-
+      "REST API calls require an Authorization header using an access token with Bearer
+      token type, as defined by the OAuth2 RFC6750 Bearer Token Usage document"
+      (developer.ferguson.com/get-started).
+  - id: rest
+    conforms: true
+    evidence: >-
+      Ferguson describes its APIs as REST over JSON and publishes its own reading of the
+      Richardson Maturity Model
+      (developer.ferguson.com/blog/richardson-maturity-model-two-out-three-aint-bad).
+  - id: oidc
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration on any Ferguson host — 404 on ferguson.com,
+      www.ferguson.com and api.ferguson.com; both developer portals answer 200 with an
+      HTML app shell for every path, which is not a discovery document (probed
+      2026-09-09).
+  - id: oauth2-discovery
+    conforms: false
+    evidence: >-
+      No /.well-known/oauth-authorization-server or /.well-known/oauth-protected-resource
+      served on any Ferguson host (probed 2026-09-09).
+  - id: rfc9457
+    conforms: false
+    evidence: >-
+      No public error reference or machine-readable contract; the problem+json media type
+      could not be observed.
+  - id: rfc8594
+    conforms: false
+    evidence: >-
+      No public deprecation or Sunset-header policy is published outside the gated portal.
+domain_standards:
+  - id: x12-edi
+    conforms: unknown
+    evidence: >-
+      Third-party EDI integrators list Ferguson as a trading partner, but Ferguson
+      publishes no first-party EDI implementation guide or transaction-set list on any
+      public URL we could reach, so no conformance is asserted.
+  - id: cxml-punchout
+    conforms: unknown
+    evidence: >-
+      No first-party PunchOut/cXML documentation found on ferguson.com or the developer
+      portal.

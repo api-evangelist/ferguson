@@ -4,7 +4,12 @@ description: >-
   Ferguson is a Fortune 500 distributor of plumbing supplies, HVAC products,
   pipe, valves and fittings, waterworks, and building supplies serving
   professional contractors, residential homeowners, and commercial customers
-  across the United States.
+  across the United States. Ferguson runs an Enterprise API program on Google
+  Apigee, published through the Ferguson Developer Portal, that lets approved
+  partners and software providers pull product availability and cost data and
+  submit purchase orders electronically. Access is granted only to organizations
+  that complete Ferguson's partner review and approval process, and the API
+  catalog and its Swagger documentation are not readable without credentials.
 type: Index
 deliveryModel:
   model: unknown
@@ -19,16 +24,18 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: unknown
+  onboarding: partner-approval
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
-position: Consuming
+  label: Partner approval required
+  confidence: medium
+  source:
+  - https://developer.ferguson.com/faq
+  - https://developer.ferguson.com/get-started
+  generated: '2026-09-09'
+  method: searched
+position: Producing
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ferguson.png
 tags:
@@ -36,13 +43,44 @@ tags:
   - Plumbing
   - HVAC
   - Building Supplies
+  - Waterworks
+  - Pipe Valves Fittings
+  - Wholesale Distribution
+  - B2B
   - Fortune 500
 created: '2026-03-21'
-modified: '2026-04-28'
+modified: '2026-09-09'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ferguson/refs/heads/main/apis.yml
 specificationVersion: '0.23'
-apis: []
+apis:
+  - aid: ferguson:enterprise-apis
+    name: Ferguson Enterprise APIs
+    description: >-
+      A curated set of REST/JSON Enterprise APIs that let approved partners and software
+      providers transact with Ferguson — product availability and vendor cost data, and
+      electronic purchase-order submission through partner integrations. Delivered on
+      Google Apigee and secured with OAuth 2.0 (client-credentials, authorization-code and
+      ROPC grants documented; bearer tokens per RFC 6750). No baseURL is recorded because
+      Ferguson publishes no API host outside the approval-gated developer portal, and no
+      OpenAPI, Postman collection or other machine-readable contract is served on any
+      public Ferguson host (probed 2026-09-09).
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ferguson.png
+    humanURL: https://developer.ferguson.com/apis
+    tags:
+      - Distribution
+      - Product Availability
+      - Pricing
+      - Purchase Orders
+    properties:
+      - type: DeveloperPortal
+        url: https://developer.ferguson.com/
+      - type: APIReference
+        url: https://developer.ferguson.com/apis
+      - type: GettingStarted
+        url: https://developer.ferguson.com/get-started
+      - type: Authentication
+        url: authentication/ferguson-authentication.yml
 common:
   - type: DomainSecurity
     url: security/ferguson-domain-security.yml
@@ -50,6 +88,54 @@ common:
     url: https://www.linkedin.com/company/ferguson-official
   - type: Website
     url: https://www.ferguson.com
+  - type: DeveloperPortal
+    url: https://developer.ferguson.com/
+  - type: APIReference
+    url: https://developer.ferguson.com/apis
+  - type: GettingStarted
+    url: https://developer.ferguson.com/get-started
+  - type: Blog
+    url: https://developer.ferguson.com/blog
+  - type: Support
+    url: https://www.ferguson.com/content/customer-support/
+  - type: TermsOfService
+    url: https://www.ferguson.com/content/customer-support/website-information/terms-of-site-use/
+  - type: SignUp
+    url: https://www.ferguson.com/s/sign-up
+  - type: Authentication
+    url: authentication/ferguson-authentication.yml
+  - type: Conformance
+    url: conformance/ferguson-conformance.yml
+  - type: Packages
+    url: packages/ferguson-packages.yml
+  - type: Plans
+    url: plans/ferguson-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ferguson-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/ferguson-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-09'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Ferguson's API catalog and its Swagger documentation live inside a Backstage developer
+    portal whose backend answers HTTP 401 "Missing credentials" to every anonymous request
+    (/api/catalog/entities, /api/search/query), and Ferguson grants portal access only to
+    organizations that complete its partner review and approval process via
+    api.team@ferguson.com.
+  evidence:
+    - url: https://developer.ferguson.com/api/catalog/entities?filter=kind=api
+      status: 401
+    - url: https://developer.ferguson.com/api/search/query?term=api
+      status: 401
+    - url: https://www.ferguson.com/.well-known/api-catalog
+      status: 404
+  checked: '2026-09-09'

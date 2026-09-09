@@ -1,0 +1,24 @@
+generated: '2026-09-09'
+method: searched
+source: >-
+  https://developer.ferguson.com/, https://developer.ferguson.com/faq,
+  https://developer.ferguson.com/get-started (read via search-indexed public text on
+  2026-09-09; the portal is a Backstage SPA whose backend returns 401 to anonymous
+  requests)
+description: >-
+  Ferguson publishes no plans, tiers or pricing for its Enterprise APIs. Access is not a
+  product you buy: the developer portal is "a secure, centralized point of entry for
+  approved partners and software providers", access is granted only to organizations that
+  complete Ferguson's review and approval process, and requests are sent to
+  api.team@ferguson.com and then "backlogged and prioritized to meet business need".
+  There is no self-service sign-up, no free tier, no published rate card and no quota
+  table on any public page.
+plan_count: 0
+plans: []
+access:
+  model: partner-approval
+  self_service: false
+  free_tier: false
+  trial: false
+  contact: api.team@ferguson.com
+  request_url: https://developer.ferguson.com/get-started

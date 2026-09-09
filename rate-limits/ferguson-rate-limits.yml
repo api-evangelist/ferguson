@@ -1,0 +1,22 @@
+generated: '2026-09-09'
+method: searched
+source: >-
+  https://developer.ferguson.com/get-started, https://developer.ferguson.com/faq,
+  https://developer.ferguson.com/blog (read via search-indexed public text on 2026-09-09),
+  plus live probes of developer.ferguson.com, nonprod.developer.ferguson.com and
+  api.ferguson.com
+description: >-
+  Ferguson publishes no rate limits for its Enterprise APIs on any page reachable without
+  partner approval, and no limit could be observed at runtime because no public API base
+  URL or unauthenticated endpoint exists to call. Ferguson's gateway is Google Apigee
+  (the non-production portal is an Apigee integrated portal), which enforces quota and
+  spike-arrest policies per API product — but the values are configured per product and
+  are not published, so nothing is asserted here. No response headers, no window, no
+  burst, no exhaustion status code could be established.
+limit_count: 0
+limits: []
+headers: {}
+response_codes: {}
+observed: false
+note: >-
+  An honest zero: this records that no limit is published, not that no limit exists.
