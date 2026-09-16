@@ -1,0 +1,14 @@
+{
+  "repo": "ferguson",
+  "feeds": [
+    {
+      "source": "https://developer.ferguson.com/get-started",
+      "feed_url": "https://developer.ferguson.com/get-started",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-09-13T13:00:00Z"
+}
