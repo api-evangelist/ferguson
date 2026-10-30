@@ -1,4 +1,4 @@
-# Ferguson (ferguson)
+# Ferguson
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,35 +64,102 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ferguson is a Fortune 500 distributor of plumbing supplies, HVAC products, pipe, valves and fittings, waterworks, and building supplies serving professional contractors, residential homeowners, and commercial customers across the United States.
+Ferguson is a Fortune 500 distributor of plumbing supplies, HVAC products, pipe, valves and fittings, waterworks, and building supplies serving professional contractors, residential homeowners, and commercial customers across the United States. Ferguson runs an Enterprise API program on Google Apigee, published through the Ferguson Developer Portal, that lets approved partners and software providers pull product availability and cost data and submit purchase orders electronically. Access is granted only to organizations that complete Ferguson's partner review and approval process, and the API catalog and its Swagger documentation are not readable without credentials.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/ferguson/refs/heads/main/apis.yml)
+**Areas:** Distribution · Plumbing · HVAC · Building Supplies · Waterworks · Pipe Valves Fittings · Wholesale Distribution · B2B · Fortune 500
 
-## Scope
+## Ferguson on APIs.io
 
-- **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Ferguson is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ferguson/](https://apis.io/providers/ferguson/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Distribution, Plumbing, HVAC, Building Supplies, Fortune 500
+- [Ferguson Enterprise APIs](https://apis.io/apis/ferguson/enterprise-apis/) — A curated set of REST/JSON Enterprise APIs that let approved partners and software providers transact with Ferguson — product availability and vendor cost…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (2)
 
-No public APIs have been documented yet. Contributions welcome.
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Ferguson Authentication](https://apis.io/security/ferguson/ferguson-authentication/)
+- [Ferguson Domain Security](https://apis.io/security/ferguson/ferguson-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ferguson Plans Pricing](https://apis.io/plans/ferguson/ferguson-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ferguson Rate Limits](https://apis.io/rate-limits/ferguson/ferguson-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.ferguson.com)
+- [Getting started](https://developer.ferguson.com/get-started)
+- [API reference](https://developer.ferguson.com/apis)
+- [Sign up](https://www.ferguson.com/s/sign-up)
+- [Support](https://www.ferguson.com/content/customer-support/)
+- [Blog](https://developer.ferguson.com/blog)
+- [Terms of service](https://www.ferguson.com/content/customer-support/website-information/terms-of-site-use/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 16.8** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 23.7 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ferguson/](https://apis.io/providers/ferguson/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ferguson: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ferguson/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
